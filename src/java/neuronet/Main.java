@@ -45,6 +45,14 @@ public class Main {
         printMatrix(transpose(weights));
         System.out.println("\nOutput after training:");
         printMatrix(neuronsOutput);
+
+        // Test
+        double[][] input = new double[][] {{1, 1, 0}};
+        neuronsState = solveNeuronsState(input, weights);
+        neuronsOutput = sigmoid(neuronsState);
+
+        System.out.println("\nNew situation:");
+        printMatrix(neuronsOutput);
     }
 
     private static double[][] correctWeights(double[][] weights, double[][] adjustments) {
