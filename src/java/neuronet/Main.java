@@ -7,14 +7,14 @@ import static java.lang.Math.exp;
 public class Main {
     public static void main(String[] args) {
         int hideNeuronsAmount = 1;
-        int inputsAmount = 3;
+        int inputsAmount = 4;
         int epochs = 20_000;
 
         double[][] trainingInputs = new double[][] {
-                {0, 0, 1},
-                {1, 1, 1},
-                {1, 0, 1},
-                {0, 1, 1}};
+                {0, 0, 1, 1},
+                {1, 1, 1, 1},
+                {1, 0, 1, 1},
+                {0, 1, 1, 1}};
 
         double[][] trainingOutputs = new double[][] {
                 {0},
@@ -47,7 +47,7 @@ public class Main {
         printMatrix(neuronsOutput);
 
         // Test
-        double[][] input = new double[][] {{1, 1, 0}};
+        double[][] input = new double[][] {{0, 0, 0, 1}};
         neuronsState = solveNeuronsState(input, weights);
         neuronsOutput = sigmoid(neuronsState);
 
